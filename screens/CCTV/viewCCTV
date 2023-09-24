@@ -1,0 +1,28 @@
+// ignore_for_file: file_names, camel_case_types, prefer_const_constructors, unnecessary_string_interpolations
+
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+
+class viewImageScreen extends StatelessWidget {
+  final String? imagePath;
+  const viewImageScreen({Key? key, this.imagePath}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: showTextAppBar("รหัสผ่านไม่ถูกต้อง"),
+      body: Image.file(File(imagePath!)),
+    );
+  }
+
+  //************************************************************* */
+  //******************************Main*************************** */
+  //************************************************************* */
+
+  AppBar showTextAppBar(String inputTextShowAppBar) {
+    return AppBar(
+      title: Text("$inputTextShowAppBar"),
+    );
+  }
+}
